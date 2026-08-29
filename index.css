@@ -30,7 +30,7 @@
     --line-height-normal: 1.7;
     --line-height-small: 1.2;
 
-    --black: #065e45;
+    --black: #0c9263;
     --pink: #053151;
     --white: #f0e9f2;
     --white-1: #e5e5e6da;
@@ -54,6 +54,28 @@ html {
     font-size: 62.5%; /* (16/10)*100 = 62.5% => 1rem = 10px */
     box-sizing: border-box;
     scroll-behavior: smooth;
+}
+
+/* Make the container fill the entire viewport height */
+.split-container {
+  display: flex; /* Aligns child items horizontally */
+  height: 100vh; /* 100% of the viewport height */
+  width: 100%;
+}
+
+/* Share the width equally between both sections */
+.left-side, .right-side {
+  flex: 1; /* Gives equal 50/50 sizing */
+  padding: 20px;
+}
+
+/* Optional styling to visualize the split */
+.left-side {
+  background-color: #389b73;
+}
+
+.right-side {
+  background-color: #70babd;
 }
 
 @media(max-width: 1000px) {
