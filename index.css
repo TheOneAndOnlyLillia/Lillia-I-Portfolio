@@ -6,6 +6,12 @@
   font-style: normal;
 }
 
+.delius-swash-caps-regular {
+  font-family: "Delius Swash Caps", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 * {
     margin: 0;
@@ -643,7 +649,7 @@ body:not(.user-is-tabbing) a:focus {
   height: 14px;
   border-radius: 50%;
   background: #ffffff;
-  border: 4px solid #0066cc;
+  border: 4px solid #112c6e;
   z-index: 2;
 }
 
@@ -652,7 +658,7 @@ body:not(.user-is-tabbing) a:focus {
   display: flex;
   gap: 25px;
   align-items: center;
-  background: #ffffff;
+  background: #75eae3;
   border: 1px solid #e2e8f0;
   border-radius: 8px;
   padding: 20px;
