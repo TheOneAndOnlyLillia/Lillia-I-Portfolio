@@ -1,15 +1,15 @@
-@font-face {
-    font-family: "Valley Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-}
 
+@font-face {
+  font-family: "Valley Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 127;
+  font-style: normal;
+}
 
 
 * {
     margin: 0;
-    padding: 0;
+    padding: 10px;
     box-sizing: inherit;
 }
 
@@ -61,7 +61,7 @@ html {
 /* Share the width equally between both sections */
 .left-side, .right-side {
   flex: 1; /* Gives equal 50/50 sizing */
-  padding: 20px;
+  padding: 40px;
 }
 
 /* Optional styling to visualize the split */
@@ -70,7 +70,7 @@ html {
 }
 
 .right-side {
-  background-color: #70babd;
+  background-color: #389b73;
 }
 
 @media(max-width: 1000px) {
@@ -124,7 +124,8 @@ section {
 }
 
 img {
-    object-fit: contain;
+    width: 400px;         /* Change this value to make the box wider or narrower */
+    height: auto;
     max-width: 100%;
 }
 
@@ -384,6 +385,8 @@ body:not(.user-is-tabbing) a:focus {
 /* Makes the container fit the image bounds perfectly */
 .clickable-image {
   display: inline-block;
+  width: 400px;         /* Change this value to make the box wider or narrower */
+  height: auto;
 }
 
 /* Subtle visual effect when the user hovers over the image */
