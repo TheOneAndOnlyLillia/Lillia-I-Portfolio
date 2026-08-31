@@ -386,7 +386,7 @@ body:not(.user-is-tabbing) a:focus {
 .clickable-image {
   display: inline-block;
   width: 400px;         /* Change this value to make the box wider or narrower */
-  height: auto;
+  height: 400px;
 }
 
 /* Subtle visual effect when the user hovers over the image */
