@@ -1,0 +1,1 @@
+Hello! My name is Lillia Ivaniv. I'm currently a senior in high school, who loves engineering and robotics. These are a few projects that I've made so far, and I'm very open to feedback and connecting with others who love to build things :)
