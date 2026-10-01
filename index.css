@@ -1,22 +1,31 @@
+<<<<<<< HEAD
 /* =========================================================
    Project gallery + project page styles
    Made to sit on top of index.css and match its colors:
    green background, navy accents, cyan timeline cards.
    Load this AFTER index.css.
    ========================================================= */
+=======
+
+>>>>>>> 109be4e3c8b60854319b81ce6899e315ad11a3c8
 
 :root {
   --pp-navy: #053151;      /* same as your --pink */
   --pp-cyan: #75eae3;      /* same as your timeline cards */
   --pp-light: #f0e9f2;     /* same as your --white */
   --pp-light-1: #e5e5e6;   /* same as your --white-1 */
+<<<<<<< HEAD
   --pp-card: #f0e9f2;      /* gallery card background */
+=======
+  --pp-card: #f0e9f2;      
+>>>>>>> 109be4e3c8b60854319b81ce6899e315ad11a3c8
   --pp-card-text: #053151;
   --pp-card-muted: #33505f;
   --pp-radius: 14px;
   --pp-max-width: 1100px;
 }
 
+<<<<<<< HEAD
 /* ---------- fixes for rules in index.css ---------- */
 
 /* index.css gives EVERY element 10px padding (the * rule). Undo that inside the
@@ -27,6 +36,16 @@
 .project-grid, .project-card, #project, .lightbox, .project-topbar { font-size: 16px; }
 
 /* ---------- HOMEPAGE HEADER: intro top-left, project cards on both sides ---------- */
+=======
+
+
+:where(.project-grid, .project-card, #project, .lightbox, .project-topbar) * { padding: 0; }
+
+
+.project-grid, .project-card, #project, .lightbox, .project-topbar { font-size: 16px; }
+
+
+>>>>>>> 109be4e3c8b60854319b81ce6899e315ad11a3c8
 .home-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -264,6 +283,12 @@
   /* One column on phones: intro first, then each project card */
   .home-grid { grid-template-columns: 1fr; padding: 24px; gap: 24px; }
   .intro h2 { margin-top: 32px; }
+<<<<<<< HEAD
+=======
+}
+@media (max-width: 600px) {
+  .project-nav { flex-direction: column; }
+>>>>>>> 109be4e3c8b60854319b81ce6899e315ad11a3c8
 }
 @media (max-width: 600px) {
   .project-nav { flex-direction: column; }
