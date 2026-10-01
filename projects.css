@@ -1,0 +1,265 @@
+
+
+:root {
+  --pp-navy: #053151;      /* same as your --pink */
+  --pp-cyan: #75eae3;      /* same as your timeline cards */
+  --pp-light: #f0e9f2;     /* same as your --white */
+  --pp-light-1: #e5e5e6;   /* same as your --white-1 */
+  --pp-card: #f0e9f2;      /* gallery card background */
+  --pp-card-text: #053151;
+  --pp-card-muted: #33505f;
+  --pp-radius: 14px;
+  --pp-max-width: 1100px;
+}
+
+/* ---------- fixes for rules in index.css ---------- */
+
+/* index.css gives EVERY element 10px padding (the * rule). Undo that inside the
+   project components only. :where() keeps this weak, so the rules below still win. */
+:where(.project-grid, .project-card, #project, .lightbox, .project-topbar) * { padding: 0; }
+
+/* Fixed base size so index.css's 62.5% font trick doesn't shrink these */
+.project-grid, .project-card, #project, .lightbox, .project-topbar { font-size: 16px; }
+
+/* ---------- HOMEPAGE HEADER: intro top-left, project cards on both sides ---------- */
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+  padding: 48px;
+  background: #389b73;          /* same green as your old left/right sides */
+}
+.home-grid > * { min-width: 0; }
+.intro { align-self: center; }
+.intro .btn { margin-bottom: 8px; }
+.intro h2 { margin: 48px 0 0; }   /* "My Projects" label under the email button */
+.home-grid .project-card { padding: 0; }
+.home-grid .card-body { padding: 18px 22px 22px; }
+.home-grid .card-body h3 { font-size: 1.45em; }
+.home-grid .card-body p { font-size: 1.02em; }
+
+/* ---------- GALLERY (cards on the homepage) ---------- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+  gap: 24px;
+  max-width: var(--pp-max-width);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.project-grid--compact {
+  grid-template-columns: repeat(auto-fill, minmax(min(210px, 100%), 1fr));
+  gap: 18px;
+  padding: 0;
+}
+
+.project-card {
+  display: block;
+  text-align: left;
+  background: var(--pp-card);
+  border-radius: var(--pp-radius);
+  overflow: hidden;
+  color: var(--pp-card-text);
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(5, 49, 81, .18);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.project-card:hover,
+.project-card:focus-visible {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px rgba(5, 49, 81, .30);
+}
+
+.card-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #d6ebe3;
+}
+.card-media img,
+.card-media video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  transition: transform .4s ease, opacity .3s ease;
+}
+.card-media video { opacity: 0; }
+.project-card.playing .card-media video { opacity: 1; }
+.project-card:hover .card-media img { transform: scale(1.05); }
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 14px;
+  background: linear-gradient(to top, rgba(5, 49, 81, .8), transparent 60%);
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+.card-overlay span { color: #fff; font-weight: 600; font-size: .95em; }
+.project-card:hover .card-overlay,
+.project-card:focus-visible .card-overlay { opacity: 1; }
+
+.card-body { padding: 14px 16px 18px; }
+.card-body h3 {
+  margin: 0 0 6px;
+  font-size: 1.15em;
+  font-weight: 600;
+  color: var(--pp-card-text);
+}
+.card-body p {
+  margin: 0 0 12px;
+  max-width: none;
+  color: var(--pp-card-muted);
+  font-size: .92em;
+  line-height: 1.45;
+}
+
+.tags { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0; }
+.tags li {
+  background: var(--pp-cyan);
+  color: var(--pp-navy);
+  font-size: .75em;
+  font-weight: 600;
+  line-height: 1.4;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+/* ---------- PROJECT PAGE ---------- */
+.project-topbar {
+  max-width: var(--pp-max-width);
+  margin: 0 auto;
+  padding: 20px 16px 0;
+}
+.project-topbar a { color: var(--pp-light); font-weight: 500; text-decoration: none; }
+.project-topbar a:hover { text-decoration: underline; }
+
+#project {
+  display: block;
+  max-width: var(--pp-max-width);
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+  color: var(--pp-light-1);
+}
+/* index.css puts 120px of padding and a border on every <section> */
+#project section { padding: 0; border-bottom: 0; }
+
+.hero-media {
+  border-radius: var(--pp-radius);
+  overflow: hidden;
+  background: #063a2a;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
+}
+.hero-media img,
+.hero-media video {
+  display: block;
+  width: 100%;
+  max-width: none;
+  max-height: 70vh;
+  object-fit: cover;
+}
+.hero-media video { aspect-ratio: 16 / 9; object-fit: contain; }
+.video-embed { position: relative; aspect-ratio: 16 / 9; }
+.video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+.hero-text { margin-top: 28px; }
+.hero-date {
+  color: var(--pp-cyan);
+  font-weight: 700;
+  font-size: .85em;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+#project .hero-text h1 {
+  font-size: clamp(2.2em, 5vw, 3.4em);
+  font-weight: 500;
+  margin: 6px 0 8px;
+  line-height: 1.1;
+}
+.hero-tagline { font-size: 1.2em; margin: 0 0 16px; max-width: none; }
+.hero-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.proj-btn {
+  display: inline-block;
+  background: var(--pp-navy);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+}
+.proj-btn:hover { background: #0a4a78; }
+
+.overview, .development { margin-top: 56px; }
+/* Smaller version of your site's h2 (keeps your navy underline bar) */
+#project .overview h2,
+#project .development h2 { font-size: 2.1em; margin: 0 0 8px; }
+#project .overview h2::after,
+#project .development h2::after { margin: 12px 0 0; width: 80px; }
+.overview p { font-size: 1.1em; line-height: 1.7; max-width: 75ch; margin: 16px 0 0; }
+
+/* Development timeline: uses YOUR .timeline styles from index.css,
+   just with readable font sizes and room for several photos per step */
+#project .timeline { margin: 28px 0 0; max-width: 960px; }
+#project .timeline-item:last-child { margin-bottom: 0; }
+#project .project-date { font-size: .8em; letter-spacing: .06em; }
+#project .timeline-content h3 { font-size: 1.35em; font-weight: 500; margin: 4px 0 8px; }
+#project .timeline-content p { font-size: 1em; line-height: 1.6; color: #2d3b4a; max-width: none; }
+.timeline-media figure { margin: 0; }
+.timeline-media figure + figure { margin-top: 12px; }
+.timeline-media img { cursor: zoom-in; max-width: none; display: block; }
+.timeline-media figcaption { font-size: .82em; color: #1f4d5a; margin-top: 5px; }
+
+.project-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(240, 233, 242, .35);
+}
+.project-nav a { color: var(--pp-light); text-decoration: none; font-weight: 500; }
+.project-nav a:hover { text-decoration: underline; }
+
+.not-found { text-align: center; padding: 80px 0; }
+
+/* ---------- click-to-enlarge photos ---------- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .88);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 1000;
+}
+.lightbox.open { display: flex; }
+.lightbox figure { margin: 0; text-align: center; }
+.lightbox img { width: auto; max-width: 92vw; max-height: 82vh; border-radius: 8px; }
+.lightbox figcaption { color: #ddd; margin-top: 10px; }
+.lb-close {
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  background: none;
+  border: 0;
+  color: #fff;
+  font-size: 2.4em;
+  cursor: pointer;
+}
+
+/* ---------- phones ---------- */
+@media (max-width: 800px) {
+  /* One column on phones: intro first, then each project card */
+  .home-grid { grid-template-columns: 1fr; padding: 24px; gap: 24px; }
+  .intro h2 { margin-top: 32px; }
+}
+@media (max-width: 600px) {
+  .project-nav { flex-direction: column; }
+}
