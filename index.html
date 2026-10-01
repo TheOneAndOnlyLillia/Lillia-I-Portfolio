@@ -8,6 +8,8 @@
   <style>
   @import url('https://fonts.googleapis.com/css2?family=Coiny&family=Delius+Swash+Caps&family=Valley+Sans:ital,wght@0,127;1,127&display=swap');
   </style>
+  <!-- Jost: the heading/link font index.css asks for (it was never loaded) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap" />
 
   <!-- Put your site title here -->
   <title>
@@ -18,36 +20,31 @@
   <!-- Add some coding keywords below, Ex: (React, CSS etc) -->
   <meta name="keywords" content="Lillia Ivaniv, biomedical engineering, electrical engineering" />
   <link rel="stylesheet" href="index.css" />
+  <!-- Project gallery + project page styles -->
+  <link rel="stylesheet" href="projects.css" />
 </head>
 
 <body>
     <header>
 
-    
-    <div class="split-container">
-      <div class="left-side">
+
+    <!-- Two-column grid: your intro is the top-left box, and the project cards
+         fill in around it (top-right, then left/right below).
+         The cards are built automatically from projects.js. Clicking one opens
+         that project's page (project.html?id=...). To add/change a project,
+         edit projects.js, not this file. -->
+    <div id="project-grid" class="home-grid">
+      <div class="intro">
         <h1 class="heading-primary">
           <!-- Replace the following name with your name -->
           <span>Lillia Ivaniv</span>
         </h1>
         <!-- Put a small paragraph about yourself -->
         <p>Aspiring electrical engineer with a passion for building solutions in the biomedical and aerospace industry.</p>
-        <a href="#contact" class="btn btn--pink">My email: lilliavaleria@gmail.com</a>
-        <a href="biohyd.html" class="clickable-image">
-            <img src="logo.png" alt="Bioimpedance Hydration Detector">
-        </a>
+        <a href="mailto:lilliavaleria@gmail.com" class="btn btn--pink">My email: lilliavaleria@gmail.com</a>
+        <h2>My Projects</h2>
       </div>
-      <div class="right-side">
-        <h2> My Projects</h2>
-        <a href="drone.html" class="clickable-image">
-            <img src="logo.png" alt="Interceptor Drone System">
-        </a>
-        <a href="https://example.com" class="clickable-image">
-            <img src="spider.html" alt="Spider Inspired Quadreped">
-        </a>
-        
-
-      </div>
+      <!-- project cards get added here -->
     </div>
   </header>
 
@@ -57,7 +54,7 @@
 
     <section class="work" id="work">
       <div class="row">
-        <h2>My Projects</h2>
+        <h2>Project Details</h2>
         <div class="work__boxes">
 
           <!-- Each div with the work__box class is a project. -->
@@ -76,17 +73,19 @@
               </ul>
 
               <div class="work__links">
-                <a href="https://nisar.surge.sh" target="_blank" class="link__text">
-                  Visit Site <span>&rarr;</span>
+                <a href="project.html?id=drone" class="link__text">
+                  View Project <span>&rarr;</span>
                 </a>
-                <a href="https://github.com/nisarhassan12/portfolio" title="View Source Code" target="_blank">
+                <!-- When you have a GitHub repo for this project, put its link below and remove the comment marks
+                <a href="https://github.com/YOUR-USERNAME/YOUR-REPO" title="View Source Code" target="_blank">
                   <img src="./images/github.svg" class="work__code" alt="GitHub">
                 </a>
+                -->
               </div>
             </div>
-            <div class="work__image-box">
-              <img src="./images/project-1.png" class="work__image" alt="Project 1" />
-            </div>
+            <a href="project.html?id=drone" class="work__image-box">
+              <img src="./images/project-1.png" class="work__image" alt="Interceptor Drone System" />
+            </a>
           </div>
 
           <div class="work__box">
@@ -96,51 +95,53 @@
                 This is an in progress project aiming to possess the ability to calculate the hydration of a patient's body and is compliant with older individuals
               </p>
               <ul class="work__list">
-                <li>React</li>
-                <li>Next.js</li>
-                <li>Node</li>
-                <li>MongoDB</li>
+                <li>Uses bioimpedance to estimate body hydration</li>
+                <li>Designed with older patients in mind</li>
+                <li>Currently in development</li>
               </ul>
 
               <div class="work__links">
-                <a href="#" class="link__text">
-                  Visit Site <span>&rarr;</span>
+                <a href="project.html?id=biohyd" class="link__text">
+                  View Project <span>&rarr;</span>
                 </a>
-                <a href="#">
-                  <img src="./images/github.svg" class="work__code" title="View Source Code" alt="GitHub">
+                <!-- GitHub link (remove the comment marks when ready)
+                <a href="https://github.com/YOUR-USERNAME/YOUR-REPO" title="View Source Code" target="_blank">
+                  <img src="./images/github.svg" class="work__code" alt="GitHub">
                 </a>
+                -->
               </div>
             </div>
-            <div class="work__image-box">
-              <img src="./images/project-2.png" class="work__image" alt="Project 1" />
-            </div>
+            <a href="project.html?id=biohyd" class="work__image-box">
+              <img src="./images/project-2.png" class="work__image" alt="Bioimpedance Hydration Detector" />
+            </a>
           </div>
 
           <div class="work__box">
             <div class="work__text">
-              <h3>Spider-Inspired Quadreped</h3>
+              <h3>Spider-Inspired Quadruped</h3>
               <p>
-                Quadreped robot capable of balancing and walking on very small ground contact points, used for robotics community outreach.
+                Quadruped robot capable of balancing and walking on very small ground contact points, used for robotics community outreach.
               </p>
               <ul class="work__list">
-                <li>React</li>
-                <li>Next.js</li>
-                <li>Node</li>
-                <li>MongoDB</li>
+                <li>Balances and walks on very small contact points</li>
+                <li>Servo-driven legs</li>
+                <li>Used for robotics community outreach</li>
               </ul>
 
               <div class="work__links">
-                <a href="#" class="link__text">
-                  Visit Site <span>&rarr;</span>
+                <a href="project.html?id=spider" class="link__text">
+                  View Project <span>&rarr;</span>
                 </a>
-                <a href="#">
-                  <img src="./images/github.svg" class="work__code" title="View Source Code" alt="GitHub">
+                <!-- GitHub link (remove the comment marks when ready)
+                <a href="https://github.com/YOUR-USERNAME/YOUR-REPO" title="View Source Code" target="_blank">
+                  <img src="./images/github.svg" class="work__code" alt="GitHub">
                 </a>
+                -->
               </div>
             </div>
-            <div class="work__image-box">
-              <img src="./images/project-3.png" class="work__image" alt="Project 3" />
-            </div>
+            <a href="project.html?id=spider" class="work__image-box">
+              <img src="./images/project-3.png" class="work__image" alt="Spider-Inspired Quadruped" />
+            </a>
           </div>
         </div>
       </div>
@@ -150,12 +151,12 @@
 
     <!-- ***** About ***** -->
 
-    
+
   </main>
 
   <!-- ***** Contact ***** -->
 
-  
+
 
   <!-- ***** Footer ***** -->
 
@@ -163,20 +164,26 @@
     <div class="row">
       <!-- Update the links to point to your accounts -->
       <ul class="footer__social-links">
+        <!-- Put YOUR GitHub profile link here (it was still pointing to the template author's) and remove the comment marks
         <li class="footer__social-link-item">
-          <a href="https://github.com/nisarhassan12/" title="Link to Github Profile">
+          <a href="https://github.com/YOUR-USERNAME" title="Link to Github Profile">
             <img src="./images/github.svg" class="footer__social-image" alt="Github">
           </a>
         </li>
+        -->
         <li class="footer__social-link-item">
           <a href="https://www.linkedin.com/in/lillia-ivaniv-6627a72b7/">
             <img src="./images/linkedin.svg" title="Link to Linkedin Profile" class="footer__social-image" alt="Linkedin">
           </a>
         </li>
       </ul>
-
+    </div>
+  </footer>
 
   <script src="./index.js"></script>
+  <!-- Builds the project gallery from projects.js -->
+  <script src="./projects.js"></script>
+  <script src="./portfolio.js"></script>
 </body>
 
 </html>
