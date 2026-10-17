@@ -8,9 +8,9 @@ const PROJECTS = [
     date: "Summer 2026",
     tags: ["Embedded Systems", "Computer Vision", "Raspberry Pi", "UAV"],
 
-   
-    thumbnail: "drone.mp4",
-    previewVideo: "images/drone/preview.mp4", // delete this line if you don't have a clip
+    
+    thumbnail: "dronefly.jpg",
+    previewVideo: "drone.mp4", 
 
     // Top of the project page. type: "video" | "image" | "youtube"
     hero: { type: "video", src: "images/drone/final.mp4", poster: "images/project-1.png" },
