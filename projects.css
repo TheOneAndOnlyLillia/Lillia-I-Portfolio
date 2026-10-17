@@ -1,12 +1,12 @@
 
 
 :root {
-  --pp-navy: #053151;      /* same as your --pink */
-  --pp-cyan: #75eae3;      /* same as your timeline cards */
-  --pp-light: #f0e9f2;     /* same as your --white */
-  --pp-light-1: #e5e5e6;   /* same as your --white-1 */
-  --pp-card: #f0e9f2;      /* gallery card background */
-  --pp-card-text: #053151;
+  --pp-navy: #154e76;      
+  --pp-cyan: #75eae3;      
+  --pp-light: #f0e9f2;     
+  --pp-light-1: #e5e5e6;   
+  --pp-card: #f0e9f2;     
+  --pp-card-text: #145b8e;
   --pp-card-muted: #33505f;
   --pp-radius: 14px;
   --pp-max-width: 1100px;
@@ -68,7 +68,7 @@
 .project-card:hover,
 .project-card:focus-visible {
   transform: translateY(-5px);
-  box-shadow: 0 14px 30px rgba(5, 49, 81, .30);
+  box-shadow: 0 14px 30px rgba(35, 118, 177, 0.3);
 }
 
 .card-media {

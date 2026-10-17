@@ -1,21 +1,12 @@
-/* =========================================================
-   PROJECT DATA — this is the only file you edit to add projects.
-   Copy one { ... } block, change the text and image paths, done.
 
-   Image/video paths are relative to your repo root.
-   Missing images show a grey placeholder, so you can fill them in later.
-
-   The development step text below is a STARTING DRAFT — rewrite it in
-   your own words and add the real details.
-   ========================================================= */
 
 const PROJECTS = [
   {
     id: "drone",                              // page URL: project.html?id=drone
-    title: "Interceptor Drone System",
-    tagline: "GreenSight internship: autonomous object tracking on the WISP drone",
+    title: "Autonomous Object-Tracking Drone",
+    tagline: "GreenSight internship: autonomous object tracking on company drone",
     date: "Summer 2026",
-    tags: ["Embedded", "Computer Vision", "Raspberry Pi", "Mission Planner"],
+    tags: ["Embedded Systems", "Computer Vision", "Raspberry Pi", "UAV"],
 
     // Gallery card picture (and optional short muted hover clip)
     thumbnail: "images/project-1.png",
@@ -29,7 +20,7 @@ const PROJECTS = [
       "During my internship at GreenSight, I designed and built an interceptor electrical system by modifying an existing company drone (WISP). An OpenMV camera detects and tracks a target, a Raspberry Pi sends commands to the flight controller so the drone flies toward it, and the live camera feed is streamed to a client.",
 
     links: [
-      // { label: "View code", url: "https://github.com/YOUR-USERNAME/YOUR-REPO" }
+      // { label: "View code", url: "https://github.com/TheOneAndOnlyLillia/Drone-camera-tracking" }
     ],
 
     steps: [
@@ -37,31 +28,31 @@ const PROJECTS = [
         title: "System design",
         date: "",
         text: "Planned how to add an interceptor system to the existing WISP drone: which hardware to add and how the camera, Raspberry Pi, and flight controller would communicate.",
-        images: [{ src: "images/drone/step1.jpg", caption: "System block diagram" }]
+        images: [{ src: "blocks.jpeg", caption: "System block diagram" }]
       },
       {
         title: "Object detection with OpenMV",
         date: "",
-        text: "Programmed the OpenMV camera to detect and track the target object.",
-        images: [{ src: "images/drone/step2.jpg", caption: "Detection output" }]
+        text: "Programmed the OpenMV camera to detect and track a bright red object, as it's not a common naturally exisiting color outside, where we were planning to demo.",
+        images: [{ src: "camerastream.jpg", caption: "Detection output" }]
       },
       {
-        title: "Raspberry Pi to flight controller",
+        title: "Wiring and connection to WISP",
         date: "",
         text: "Connected the Raspberry Pi to the drone's flight controller so tracking data turns into flight commands, using Mission Planner to configure and monitor the drone.",
-        images: [{ src: "images/drone/step3.jpg", caption: "Bench testing" }]
+        images: [{ src: "wiring.jpeg", caption: "Bench testing" }]
       },
       {
-        title: "Live camera stream",
+        title: "Establishing communication with flight controller",
         date: "",
-        text: "Set up streaming of the live camera feed to a client.",
-        images: [{ src: "images/drone/step4.jpg", caption: "Live feed" }]
+        text: "This was undoubtebly the most difficult part of the process. My code was able to calcualte how offset the center of the red object was from the center of the camera and make a flight decision, but the flight controller kept rejecting the command the Pi would send. This was ultimately due to software parameter restrictions on Mission Planner that required the drone to be on 'Guided' mode, which was only allowed if the drone was already in mid flight. Luckily I was able to override this arming command temporarily for safe testing of the code, and then reinstated the safety parameters for client demo testing.",
+        images: [{ src: "feedback.jpeg", caption: "Live feed" }]
       },
       {
         title: "Flight testing",
         date: "",
         text: "Debugged the full system and tested it in flight.",
-        images: [{ src: "images/drone/step5.jpg", caption: "Outdoor flight test" }]
+        images: [{ src: "dronefly.jpg", caption: "Outdoor flight test" }]
       }
     ]
   },
