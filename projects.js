@@ -8,8 +8,8 @@ const PROJECTS = [
     date: "Summer 2026",
     tags: ["Embedded Systems", "Computer Vision", "Raspberry Pi", "UAV"],
 
-    // Gallery card picture (and optional short muted hover clip)
-    thumbnail: "drone.mov",
+   
+    thumbnail: "drone.mp4",
     previewVideo: "images/drone/preview.mp4", // delete this line if you don't have a clip
 
     // Top of the project page. type: "video" | "image" | "youtube"
