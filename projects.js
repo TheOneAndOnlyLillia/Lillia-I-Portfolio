@@ -9,7 +9,7 @@ const PROJECTS = [
     tags: ["Embedded Systems", "Computer Vision", "Raspberry Pi", "UAV"],
 
     // Gallery card picture (and optional short muted hover clip)
-    thumbnail: "images/project-1.png",
+    thumbnail: "drone.mov",
     previewVideo: "images/drone/preview.mp4", // delete this line if you don't have a clip
 
     // Top of the project page. type: "video" | "image" | "youtube"
