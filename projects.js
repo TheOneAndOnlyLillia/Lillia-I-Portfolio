@@ -33,7 +33,7 @@ const PROJECTS = [
       {
         title: "Object detection with OpenMV",
         date: "",
-        text: "Programmed the OpenMV camera to detect and track a bright red object, as it's not a common naturally exisiting color outside, where we were planning to demo. It was able to track a red sign from about 15 meters away. I tested various threshold colors on the OpenMV script to ensure it didn't detect more muted colors of red, as when first writing the script, the camera would detect my hand as a target due to its redness, but this issue was removed through fine tuning of that threshold. ",
+        text: "Programmed the OpenMV camera to detect and track a bright red object, as it's not a common naturally exisiting color outside, where we were planning to demo. It was able to track a red sign from about 15 meters away. I tested various threshold colors on the OpenMV script to ensure it didn't detect more muted colors of red, as when first writing the script, the camera would detect my hand as a target due to its redness, but this issue was removed through fine tuning of that threshold. The camera quality was a little fuzzy due to the microprocessor of the Raspberry Pi Zero W. We were supposed to get the 2W, but it was unfortunately sold out during my internship and we had a six week time constraint, but it had enough range to perform well during our proof of concept demo and client demo. ",
         images: [{ src: "camerastream.jpg" }]
       },
       {
