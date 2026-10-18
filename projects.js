@@ -27,7 +27,7 @@ const PROJECTS = [
       {
         title: "Block diagram of electronic system architecture",
         date: "",
-        text: "Planned how to add an object tracking system to the existing WISP drone after our intern project design meeting to meet a current market demand in the industry GreenSight operated in. The entire project was to build a large 'mother' drone that would deploy smaller drones that would track and fly towards an object. I researched and then planned out which hardware to add and how the camera, Raspberry Pi, and flight controller would communicate with the drone.",
+        text: "Planned how to add an object tracking system to the existing WISP drone after our intern project design meeting to meet a current market demand in the industry GreenSight operated in. The entire project was to build a large 'mother' drone that would deploy smaller drones that would track and fly towards an object. My job was to build the smaller autonomous object tracking drones. I researched and then planned out which hardware to add and how the camera, Raspberry Pi, and flight controller would communicate with the drone.",
         images: [{ src: "blocks.jpeg" }]
       },
       {
@@ -45,13 +45,13 @@ const PROJECTS = [
       {
         title: "Establishing communication with flight controller",
         date: "",
-        text: "This was undoubtebly the most difficult part of the process. I had to dig through the Mission Planner architecture to figure out how to send commands to the flight controller, which is done through finding its specific id, along with cutting and micro to micro usb cabke to attach to the drone. My code was able to calculate how offset the center of the red object was from the center of the camera and make a flight decision, but the flight controller kept rejecting the command the Pi would send. This was ultimately due to software parameter restrictions on Mission Planner that required the drone to be on 'Guided' mode, which was only allowed if the drone was already in mid flight. Luckily I was able to override this arming command temporarily for safe testing of the code, and then reinstated the safety parameters for client demo testing.",
+        text: "I had to learn how to send MAVLINK commands to the Ardupilot controller, along with cutting and micro to micro usb cabke to attach to the drone. My code was able to calculate how offset the center of the red object was from the center of the camera and make a flight decision, but the flight controller kept rejecting the command the Pi would send. This was ultimately due to software parameter restrictions on Mission Planner that required the drone to be on 'Guided' mode, which was only allowed if the drone was already in mid flight. Luckily I was able to override this arming command temporarily for safe testing of the code, and then reinstated the safety parameters for client demo testing.",
         images: [{ src: "feedback.jpeg" }]
       },
       {
         title: "Flight testing",
         date: "",
-        text: "We took the drone outside to an isolated parking lot, where we would first remote control fly the drone up to a height of about 2 meters on 'Stabilize', and then switched to 'Guided' mode to let the camera feed and Pi script run. The camera feed was also streamed on a computer to allow the client to be able to see the tracking in real time. ",
+        text: "We took the drone outside to an isolated parking lot, where we would first remote control fly the drone up to a height of about 2 meters on 'Stabilize', and then switched to 'Guided' mode to let the camera feed and Pi script run. The camera feed was also streamed on a computer to allow the client to be able to see the tracking in real time. The drone was able to successfly track and fly towards the red sign (as seen in the video at the top of the page).",
         images: [{ src: "dronefly.jpg" }]
       }
     ]
