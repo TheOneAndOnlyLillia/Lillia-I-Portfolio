@@ -4,7 +4,7 @@ const PROJECTS = [
   {
     id: "drone",                              // page URL: project.html?id=drone
     title: "Autonomous Object-Tracking Drone",
-    tagline: "GreenSight internship: autonomous object tracking on company drone",
+    tagline: "GreenSight Embedded Systems / Electrical Engineering Internship ",
     date: "Summer 2026",
     tags: ["Embedded Systems", "Computer Vision", "Raspberry Pi", "UAV"],
 
@@ -13,11 +13,11 @@ const PROJECTS = [
     previewVideo: "drone.mp4", 
 
     // Top of the project page. type: "video" | "image" | "youtube"
-    hero: { type: "video", src: "images/drone/final.mp4", poster: "images/project-1.png" },
+    hero: { type: "video", src: "drone.mp4", poster: "images/project-1.png" },
     // YouTube instead: hero: { type: "youtube", src: "VIDEO_ID" }
 
     summary:
-      "During my internship at GreenSight, I designed and built an interceptor electrical system by modifying an existing company drone (WISP). An OpenMV camera detects and tracks a target, a Raspberry Pi sends commands to the flight controller so the drone flies toward it, and the live camera feed is streamed to a client.",
+      "During my internship at GreenSight, I designed and built an object tracking electrical and embedded system by modifying an existing company drone (WISP). An OpenMV camera detects and tracks a target, a Raspberry Pi sends commands to the flight controller so the drone flies toward it, and the live camera feed is streamed to the client. This will be used for future company projects",
 
     links: [
       // { label: "View code", url: "https://github.com/TheOneAndOnlyLillia/Drone-camera-tracking" }
@@ -25,34 +25,34 @@ const PROJECTS = [
 
     steps: [
       {
-        title: "System design",
+        title: "Block diagram of electronic system architecture",
         date: "",
-        text: "Planned how to add an interceptor system to the existing WISP drone: which hardware to add and how the camera, Raspberry Pi, and flight controller would communicate.",
-        images: [{ src: "blocks.jpeg", caption: "System block diagram" }]
+        text: "Planned how to add an object tracking system to the existing WISP drone after our intern project design meeting to meet a current market demand in the industry GreenSight operated in. The entire project was to build a large 'mother' drone that would deploy smaller drones that would track and fly towards an object. I researched and then planned out which hardware to add and how the camera, Raspberry Pi, and flight controller would communicate with the drone.",
+        images: [{ src: "blocks.jpeg" }]
       },
       {
         title: "Object detection with OpenMV",
         date: "",
-        text: "Programmed the OpenMV camera to detect and track a bright red object, as it's not a common naturally exisiting color outside, where we were planning to demo.",
-        images: [{ src: "camerastream.jpg", caption: "Detection output" }]
+        text: "Programmed the OpenMV camera to detect and track a bright red object, as it's not a common naturally exisiting color outside, where we were planning to demo. It was able to track a red sign from about 15 meters away. I tested various threshold colors on the OpenMV script to ensure it didn't detect more muted colors of red, as when first writing the script, the camera would detect my hand as a target due to its redness, but this issue was removed through fine tuning of that threshold. ",
+        images: [{ src: "camerastream.jpg" }]
       },
       {
         title: "Wiring and connection to WISP",
         date: "",
-        text: "Connected the Raspberry Pi to the drone's flight controller so tracking data turns into flight commands, using Mission Planner to configure and monitor the drone.",
-        images: [{ src: "wiring.jpeg", caption: "Bench testing" }]
+        text: "Connected camera to Pi via SPI connection. Made a custom connector to power Pi from the flight controller by finding a spare 5V/GND port on PCB with a multimeter due to the schematic being lost in company files. I then collaborated with mechanical interns for them to design the casing and mounts for the camera, Pi, and telemetry radio",
+        images: [{ src: "wiring.jpeg", src: "alldrone.jpeg" }]
       },
       {
         title: "Establishing communication with flight controller",
         date: "",
-        text: "This was undoubtebly the most difficult part of the process. My code was able to calcualte how offset the center of the red object was from the center of the camera and make a flight decision, but the flight controller kept rejecting the command the Pi would send. This was ultimately due to software parameter restrictions on Mission Planner that required the drone to be on 'Guided' mode, which was only allowed if the drone was already in mid flight. Luckily I was able to override this arming command temporarily for safe testing of the code, and then reinstated the safety parameters for client demo testing.",
-        images: [{ src: "feedback.jpeg", caption: "Live feed" }]
+        text: "This was undoubtebly the most difficult part of the process. I had to dig through the Mission Planner architecture to figure out how to send commands to the flight controller, which is done through finding its specific id, along with cutting and micro to micro usb cabke to attach to the drone. My code was able to calculate how offset the center of the red object was from the center of the camera and make a flight decision, but the flight controller kept rejecting the command the Pi would send. This was ultimately due to software parameter restrictions on Mission Planner that required the drone to be on 'Guided' mode, which was only allowed if the drone was already in mid flight. Luckily I was able to override this arming command temporarily for safe testing of the code, and then reinstated the safety parameters for client demo testing.",
+        images: [{ src: "feedback.jpeg" }]
       },
       {
         title: "Flight testing",
         date: "",
-        text: "Debugged the full system and tested it in flight.",
-        images: [{ src: "dronefly.jpg", caption: "Outdoor flight test" }]
+        text: "We took the drone outside to an isolated parking lot, where we would first remote control fly the drone up to a height of about 2 meters on 'Stabilize', and then switched to 'Guided' mode to let the camera feed and Pi script run. The camera feed was also streamed on a computer to allow the client to be able to see the tracking in real time. ",
+        images: [{ src: "dronefly.jpg" }]
       }
     ]
   },
