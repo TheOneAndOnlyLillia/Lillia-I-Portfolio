@@ -62,24 +62,60 @@ const PROJECTS = [
     title: "Bioimpedance Hydration Detector",
     tagline: "Measuring a patient's hydration using bioimpedance (in progress)",
     date: "In progress",
-    tags: ["Biomedical", "Circuit Design", "Sensors"],
+    tags: ["Biomedical", "PCB/Circuit Design", "Sensors", "Analog Device"],
     thumbnail: "images/project-2.png",
     hero: { type: "image", src: "images/project-2.png" },
     summary:
-      "An in-progress device that calculates the hydration of a patient's body using bioimpedance, designed with older individuals in mind.",
+      "After my father passed out from dehydration, I had the idea of creating this sensor so he would be able to understand that he was in fact dehydrated and to take accountability and drink more water. I also live with my grandparents, who tend to feel unwell a lot of the time, which raises concern for my family, but a lot of the time it is due to not drinking enough water. After speaking with other individuals, I came to understad that dehydration is a common problem with older individuals that can lead to many health scares, but current bioimpedance technology is not set to adapt to the individual user, or is adapted to read the bodies of active younger adults, which I hope to change through an algorithm I am currently developing.",
     links: [],
     steps: [
       {
-        title: "Research & concept",
+        title: "Research and Design",
         date: "",
-        text: "Researched how bioimpedance measurements relate to body hydration and what the device needs to work for older patients.",
-        images: [{ src: "images/biohyd/step1.jpg", caption: "Concept sketch" }]
+        text: "I began by researching how bioimpedance works and how to measure and display this information to a user. I sketched out a design for the sensor using the concepts I researched about. To measure the body's impedance, the AD9833 generates a 50 kHz sine, which the Howland pump emits a constant current from that sine, the four electrodes inject the current and then measure the resistance across the user, the AD8226 (in-amp) amplifies this small signal, the precision rectifier and filter then turn this signal into DC, and then the Arduino reads it and displays the bioimpedance on the LCD screen. ",
+        images: [{ src: "sketch.png", caption: "Concept sketch" }]
+      },
+      {
+        title: "Electrode placement decision",
+        date: "",
+        text: "Describe where the prototype is now and what's next.",
+        images: [{ src: "tetrapolar.jpeg" }]
+      },
+      {
+        title: "Breadboard wiring",
+        date: "",
+        text: "Describe where the prototype is now and what's next.",
+        images: [{ src: "orwiring.jpeg" }]
+      },
+      {
+        title: "KiCAD Schematic",
+        date: "",
+        text: "Describe where the prototype is now and what's next.",
+        images: [{ src: "schem.jpeg" }]
+      },
+      {
+        title: "KiCAD PCB Design",
+        date: "",
+        text: "Describe where the prototype is now and what's next.",
+        images: [{ src: "pcb.jpeg", caption: "Current prototype" }]
+      },
+      {
+        title: "Scratching and fixing rails on PCB",
+        date: "",
+        text: "Describe where the prototype is now and what's next.",
+        images: [{ src: "cut.jpeg", caption: "Current prototype" }]
       },
       {
         title: "Prototype (in progress)",
         date: "",
         text: "Describe where the prototype is now and what's next.",
-        images: [{ src: "images/biohyd/step2.jpg", caption: "Current prototype" }]
+        images: [{ src: "resistor.jpeg", caption: "Current prototype" }]
+      },
+      {
+        title: "Calibration",
+        date: "",
+        text: "Describe where the prototype is now and what's next.",
+        images: [{ src: ""}]
       }
     ]
   },

@@ -4,7 +4,7 @@ function esc(str) {
     ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 }
 
-// Grey placeholder image (used when a photo hasn't been added yet)
+
 function placeholder(label) {
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500">
     <rect width="100%" height="100%" fill="#d6ebe3"/>
@@ -13,8 +13,7 @@ function placeholder(label) {
   return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
 }
 
-// Missing image: small icons (footer, GitHub buttons) become their text label,
-// everything else gets the placeholder box. Runs once per image.
+
 function imgFallback(img) {
   if (img.dataset.fallback) return;
   img.dataset.fallback = "1";
@@ -25,14 +24,14 @@ function imgFallback(img) {
   }
 }
 
-// Swap broken images for the placeholder
+
 document.addEventListener("error", e => {
   const el = e.target;
   if (el.tagName === "IMG") imgFallback(el);
   if (el.tagName === "VIDEO" && el.classList.contains("card-preview")) el.remove();
 }, true);
 
-// If the hero video file is missing, show its poster image instead
+
 function heroVideoFallback(video) {
   const img = document.createElement("img");
   img.src = video.getAttribute("poster") || "";
@@ -45,12 +44,12 @@ function tagsHTML(tags) {
   return `<ul class="tags">${tags.map(t => `<li>${esc(t)}</li>`).join("")}</ul>`;
 }
 
-// ---------- GALLERY (index.html) ----------
+
 function renderGallery(containerId = "project-grid") {
   const grid = document.getElementById(containerId);
   if (!grid) return;
 
-  // Keep anything already inside the grid (like the intro box) and add the cards after it
+
   grid.querySelectorAll(".project-card").forEach(c => c.remove());
   grid.insertAdjacentHTML("beforeend", PROJECTS.map(p => `
     <a class="project-card" href="project.html?id=${encodeURIComponent(p.id)}">
@@ -66,7 +65,7 @@ function renderGallery(containerId = "project-grid") {
       </div>
     </a>`).join(""));
 
-  // Play the preview video on hover (desktop) / focus (keyboard)
+
   grid.querySelectorAll(".project-card").forEach(card => {
     const vid = card.querySelector(".card-preview");
     if (!vid) return;
@@ -79,7 +78,7 @@ function renderGallery(containerId = "project-grid") {
   });
 }
 
-// ---------- PROJECT PAGE (project.html) ----------
+
 function heroHTML(p) {
   const h = p.hero || { type: "image", src: p.thumbnail };
   if (h.type === "video") {
@@ -96,7 +95,7 @@ function heroHTML(p) {
 
 function stepsHTML(steps) {
   if (!steps || !steps.length) return "";
-  // Uses the timeline classes from your index.css
+  
   // (.timeline, .timeline-item, .timeline-dot, .timeline-row, .timeline-media, .timeline-content)
   return `
     <section class="development">
@@ -170,7 +169,7 @@ function renderProject(containerId = "project") {
   setupLightbox();
 }
 
-// ---------- click-to-enlarge photos ----------
+
 function setupLightbox() {
   let box = document.getElementById("lightbox");
   if (!box) {
@@ -197,13 +196,13 @@ function setupLightbox() {
   document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
 }
 
-// Auto-run on whichever page is loaded
+
 document.addEventListener("DOMContentLoaded", () => {
   renderGallery();
   renderProject();
 });
 
-// Images elsewhere on the page that failed before this script loaded also get the placeholder
+
 window.addEventListener("load", () => {
   document.querySelectorAll("img").forEach(img => {
     if (img.complete && img.naturalWidth === 0) imgFallback(img);

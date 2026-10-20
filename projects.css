@@ -12,34 +12,31 @@
   --pp-max-width: 1100px;
 }
 
-/* ---------- fixes for rules in index.css ---------- */
 
-/* index.css gives EVERY element 10px padding (the * rule). Undo that inside the
-   project components only. :where() keeps this weak, so the rules below still win. */
 :where(.project-grid, .project-card, #project, .lightbox, .project-topbar) * { padding: 0; }
 
-/* Fixed base size so index.css's 62.5% font trick doesn't shrink these */
+
 .project-grid, .project-card, #project, .lightbox, .project-topbar { font-size: 16px; }
 
-/* ---------- HOMEPAGE HEADER: intro top-left, project cards on both sides ---------- */
+
 .home-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   align-items: start;
   padding: 48px;
-  background: #389b73;          /* same green as your old left/right sides */
+  background: #389b73;         
 }
 .home-grid > * { min-width: 0; }
 .intro { align-self: center; }
 .intro .btn { margin-bottom: 8px; }
-.intro h2 { margin: 48px 0 0; }   /* "My Projects" label under the email button */
+.intro h2 { margin: 48px 0 0; }   
 .home-grid .project-card { padding: 0; }
 .home-grid .card-body { padding: 18px 22px 22px; }
 .home-grid .card-body h3 { font-size: 1.45em; }
 .home-grid .card-body p { font-size: 1.02em; }
 
-/* ---------- GALLERY (cards on the homepage) ---------- */
+
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
@@ -131,7 +128,7 @@
   border-radius: 999px;
 }
 
-/* ---------- PROJECT PAGE ---------- */
+
 .project-topbar {
   max-width: var(--pp-max-width);
   margin: 0 auto;
@@ -147,7 +144,7 @@
   padding: 24px 16px 64px;
   color: var(--pp-light-1);
 }
-/* index.css puts 120px of padding and a border on every <section> */
+
 #project section { padding: 0; border-bottom: 0; }
 
 .hero-media {
@@ -228,7 +225,7 @@
 
 .not-found { text-align: center; padding: 80px 0; }
 
-/* ---------- click-to-enlarge photos ---------- */
+
 .lightbox {
   position: fixed;
   inset: 0;
@@ -254,9 +251,9 @@
   cursor: pointer;
 }
 
-/* ---------- phones ---------- */
+
 @media (max-width: 800px) {
-  /* One column on phones: intro first, then each project card */
+  
   .home-grid { grid-template-columns: 1fr; padding: 24px; gap: 24px; }
   .intro h2 { margin-top: 32px; }
 }
