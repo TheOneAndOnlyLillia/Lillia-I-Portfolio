@@ -84,26 +84,20 @@ const PROJECTS = [
       {
         title: "Breadboard wiring",
         date: "",
-        text: "Describe where the prototype is now and what's next.",
+        text: "While bench testing the design prototype through using breadboards, many rails were either loose or were not working, leading me to order a PCB instead for more reliable and functioning testing.",
         images: [{ src: "orwiring.jpeg" }]
       },
       {
-        title: "KiCAD Schematic",
+        title: "KiCAD Schematic and PCB Design",
         date: "",
-        text: "Describe where the prototype is now and what's next.",
-        images: [{ src: "schem.jpeg" }]
-      },
-      {
-        title: "KiCAD PCB Design",
-        date: "",
-        text: "Describe where the prototype is now and what's next.",
-        images: [{ src: "pcb.jpeg", caption: "Current prototype" }]
+        text: [{src: "schem.jpeg"}],
+        images: [{ src: "pcb.jpeg" }]
       },
       {
         title: "Scratching and fixing rails on PCB",
         date: "",
-        text: "Describe where the prototype is now and what's next.",
-        images: [{ src: "cut.jpeg", caption: "Current prototype" }]
+        text: "When designing my schematic, I had accidentally connected an electrode to the +5V rail instead of the -5V. To solve this issue, I scratched out the copper path that connected that electrode to the +5V rail.",
+        images: [{ src: "cut.jpeg", caption: "The white marks are the scratches" }]
       },
       {
         title: "Prototype (in progress)",
@@ -125,29 +119,41 @@ const PROJECTS = [
     title: "Spider-Inspired Quadruped",
     tagline: "A walking robot that balances on very small ground contact points",
     date: "",
-    tags: ["Robotics", "Servos", "Prototyping"],
-    thumbnail: "images/project-3.png",
+    tags: ["Robotics", "Servos", "Bio-Inspired"],
+    thumbnail: "newchassis.jpeg",
     hero: { type: "image", src: "images/project-3.png" },
     summary:
       "A quadruped robot capable of balancing and walking on very small ground contact points, used for robotics community outreach.",
     links: [],
     steps: [
       {
-        title: "Chassis & legs",
+        title: "Original CAD",
         date: "",
-        text: "Designed the body and four legs, inspired by how spiders walk.",
-        images: [{ src: "images/spider/step1.jpg", caption: "Chassis build" }]
+        text: "I used OnShape to design the chassis and joints for the spider, accomodating for SG90 servo sizes and to fit an Arduino Uno and PCA9685 Servo Motor Driver inside the body of the quadreped",
+        images: [{ src: "CAD.jpg" }]
       },
       {
-        title: "Servo control & walking gait",
+        title: "Battery Current Issue",
         date: "",
-        text: "Wired and programmed the servos, then tuned the gait so the robot balances on its small contact points.",
-        images: [{ src: "images/spider/step2.jpg", caption: "Gait testing" }]
+        text: "After assembling the first iteration of the spider quadreped, when testing the motors, all of the servos would keep twitching and weren't able to perform the proper movements. After some research I discovered this was because I was using standard Duracell batteries, which aren't able to supply enough current that the PCA9685 driver demanded. So I switched to NiMH rechargeable batteries which were able to supply adequate current and power to run the servos properly.",
+        images: [{ src: "battery.mp4" }]
       },
       {
-        title: "Community outreach",
+        title: "Intitial Walk Testing",
         date: "",
-        text: "Used the robot in robotics outreach events.",
+        text: "The weight of the body component of the quadruped caused the servo motors to collapse under the weight, making it difficult for the robot to stand while walking.",
+        images: [{ src: "walk1.mp4", caption: "Outreach demo" }]
+      },
+      {
+        title: "Decreasing Body Size and OLED Screen Addition",
+        date: "",
+        text: "I decreased the size and weight of the quadruped body by ~40%, allowing it to walk more steadily. Additionally, to prepare it for robotics and STEM outreach events, I added an OLED screen display to give it a face to make it more interactive and interesting to kids.",
+        images: [{ src: "newchassis.jpeg", caption: "Outreach demo" }]
+      },
+      {
+        title: "Gait Calibration and Final Walk",
+        date: "",
+        text: "",
         images: [{ src: "images/spider/step3.jpg", caption: "Outreach demo" }]
       }
     ]
