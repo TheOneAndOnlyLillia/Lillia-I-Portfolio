@@ -121,7 +121,8 @@ const PROJECTS = [
     date: "",
     tags: ["Robotics", "Servos", "Bio-Inspired"],
     thumbnail: "newchassis.jpeg",
-    hero: { type: "image", src: "images/project-3.png" },
+    previewVideo: "wave.mp4", 
+    hero: { type: "video", src: "wave.mp4", poster: "images/project-1.png" },
     summary:
       "A quadruped robot capable of balancing and walking on very small ground contact points, used for robotics community outreach.",
     links: [],
@@ -130,7 +131,7 @@ const PROJECTS = [
         title: "Original CAD",
         date: "",
         text: "I used OnShape to design the chassis and joints for the spider, accomodating for SG90 servo sizes and to fit an Arduino Uno and PCA9685 Servo Motor Driver inside the body of the quadreped",
-        images: [{ src: "CAD.jpg" }]
+        images: [{ src: "CAD.png" }]
       },
       {
         title: "Battery Current Issue",
@@ -142,19 +143,19 @@ const PROJECTS = [
         title: "Intitial Walk Testing",
         date: "",
         text: "The weight of the body component of the quadruped caused the servo motors to collapse under the weight, making it difficult for the robot to stand while walking.",
-        images: [{ src: "walk1.mp4", caption: "Outreach demo" }]
+        images: [{ src: "walk1.mp4" }]
       },
       {
         title: "Decreasing Body Size and OLED Screen Addition",
         date: "",
         text: "I decreased the size and weight of the quadruped body by ~40%, allowing it to walk more steadily. Additionally, to prepare it for robotics and STEM outreach events, I added an OLED screen display to give it a face to make it more interactive and interesting to kids.",
-        images: [{ src: "newchassis.jpeg", caption: "Outreach demo" }]
+        images: [{ src: "newchassis.jpeg" }]
       },
       {
         title: "Gait Calibration and Final Walk",
         date: "",
         text: "",
-        images: [{ src: "images/spider/step3.jpg", caption: "Outreach demo" }]
+        images: [{ src: "images/spider/step3.jpg" }]
       }
     ]
   }
