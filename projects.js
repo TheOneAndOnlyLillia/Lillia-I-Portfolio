@@ -152,9 +152,9 @@ const PROJECTS = [
         images: [{ src: "newchassis.jpeg" }]
       },
       {
-        title: "Gait Calibration and Final Walk",
+        title: "Gait Calibration, Final Walk, and Servo Change",
         date: "",
-        text: "",
+        text: "I swapped the SG90 servo motors for MG90 servo motors as some kept breaking under the weight, and the robot required more torque to walk with more stability. Then after some gait calibration, I had made a functioning quadruped inspired by a spider.",
         images: [{ src: "images/spider/step3.jpg" }]
       }
     ]
