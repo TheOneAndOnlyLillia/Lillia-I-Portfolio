@@ -139,13 +139,13 @@ const PROJECTS = [
         title: "Battery Current Issue",
         date: "",
         text: "After assembling the first iteration of the spider quadreped, when testing the motors, all of the servos would keep twitching and weren't able to perform the proper movements. After some research I discovered this was because I was using standard Duracell batteries, which aren't able to supply enough current that the PCA9685 driver demanded. So I switched to NiMH rechargeable batteries which were able to supply adequate current and power to run the servos properly.",
-        images: [{ src: "battery.mp4" }]
+        images: [{ src: "batt.jpeg" }]
       },
       {
         title: "Intitial Walk Testing",
         date: "",
         text: "The weight of the body component of the quadruped caused the servo motors to collapse under the weight, making it difficult for the robot to stand while walking.",
-        images: [{ src: "walk1.mp4" }]
+        images: [{ src: "first.jpeg" }]
       },
       {
         title: "Decreasing Body Size and OLED Screen Addition",
@@ -157,7 +157,7 @@ const PROJECTS = [
         title: "Gait Calibration, Final Walk, and Servo Change",
         date: "",
         text: "I swapped the SG90 servo motors for MG90 servo motors as some kept breaking under the weight, and the robot required more torque to walk with more stability. Then after some gait calibration, I had made a functioning quadruped inspired by a spider.",
-        images: [{ src: "images/spider/step3.jpg" }]
+        images: [{ src: "calib.jpeg" }]
       }
     ]
   }
