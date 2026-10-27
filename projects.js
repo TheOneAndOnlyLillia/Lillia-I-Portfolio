@@ -64,7 +64,7 @@ const PROJECTS = [
     date: "In progress",
     tags: ["Biomedical", "PCB/Circuit Design", "Sensors", "Analog Device"],
     thumbnail: "prototype.jpeg",
-    hero: { type: "image", src: "images/project-2.png" },
+    hero: { type: "image", src: "prototype.jpeg" },
     summary:
       "After my father passed out from dehydration, I had the idea of creating this sensor so he would be able to understand that he was in fact dehydrated and to take accountability and drink more water. I also live with my grandparents, who tend to feel unwell a lot of the time, which raises concern for my family, but a lot of the time it is due to not drinking enough water. After speaking with other individuals, I came to understad that dehydration is a common problem with older individuals that can lead to many health scares, but current bioimpedance technology is not set to adapt to the individual user, or is adapted to read the bodies of active younger adults, which I hope to change through an algorithm I am currently developing.",
     links: [
