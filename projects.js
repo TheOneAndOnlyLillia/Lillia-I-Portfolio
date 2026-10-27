@@ -63,7 +63,7 @@ const PROJECTS = [
     tagline: "Measuring a patient's hydration using bioimpedance (in progress)",
     date: "In progress",
     tags: ["Biomedical", "PCB/Circuit Design", "Sensors", "Analog Device"],
-    thumbnail: "images/project-2.png",
+    thumbnail: "prototype.jpeg",
     hero: { type: "image", src: "images/project-2.png" },
     summary:
       "After my father passed out from dehydration, I had the idea of creating this sensor so he would be able to understand that he was in fact dehydrated and to take accountability and drink more water. I also live with my grandparents, who tend to feel unwell a lot of the time, which raises concern for my family, but a lot of the time it is due to not drinking enough water. After speaking with other individuals, I came to understad that dehydration is a common problem with older individuals that can lead to many health scares, but current bioimpedance technology is not set to adapt to the individual user, or is adapted to read the bodies of active younger adults, which I hope to change through an algorithm I am currently developing.",
@@ -102,16 +102,16 @@ const PROJECTS = [
         images: [{ src: "cut.jpeg", caption: "The white marks are the scratches" }]
       },
       {
-        title: "Prototype (in progress)",
+        title: "Retracing",
         date: "",
-        text: "Describe where the prototype is now and what's next.",
+        text: "Rewired the AD9833's power rail to +5V by soldering on a wire to connect it to the path on the PCB and I bridged the -5V path back to the capacitor it was originally connected to. Added a 1 MΩ resistor from each input to ground on the bottom of the board to keep signal from floating. ",
         images: [{ src: "resistor.jpeg", caption: "Current prototype" }]
       },
       {
         title: "Calibration",
         date: "",
-        text: "Describe where the prototype is now and what's next.",
-        images: [{ src: ""}]
+        text: "Currently testing with different resistors to establish accuracy of bioimpedance, and then testing it on my arm through tetrapolar electrode connection",
+        images: [{ src: "prototype.jpeg"}]
       }
     ]
   },
